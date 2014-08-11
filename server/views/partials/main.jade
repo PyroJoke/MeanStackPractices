@@ -1,2 +1,10 @@
-h1 This is a pratial
-h2 {{ myVar }}
+.container
+    .jumbotron
+        h1 MultiVision
+        p Some text goes over here Some text goes over here ome text goes over here Some text goes over here
+
+    .row
+        .col-md-6
+            div(ng-include="'/partials/featured-courses'")
+        .col-md-6
+            div(ng-include="'/partials/new-courses'")
