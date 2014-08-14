@@ -12,8 +12,10 @@ module.config(['$routeProvider','$locationProvider',function($routeProvider, $lo
     $locationProvider.html5Mode(true);
     $routeProvider
         .when('/', {templateUrl: '/partials/main/main', controller: 'mvMainCtrl'})
+        .when('/signup', {templateUrl: '/partials/account/signup', controller: 'mvSignupCtrl'})
         .when('/admin/users', {templateUrl: '/partials/admin/user-list',
             controller: 'mvUserListCtrl', resolve: routeRoleChecks.admin});
+
 }]);
 
 angular.module('app').run(function($rootScope, $location) {
