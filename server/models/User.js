@@ -17,6 +17,14 @@ userSchema.methods = {
     },
     hasRole: function(role) {
         return this.roles.indexOf('Admin') > -1;
+    },
+    safe: function() {
+        return {
+            firstName: this.firstName,
+            lastName: this.lastName,
+            userName: this.userName,
+            roles: this.roles
+        };
     }
 };
 

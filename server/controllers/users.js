@@ -23,7 +23,7 @@ exports.createUser = function(req, res, next) {
 
         req.logIn(user, function(err) {
             if(err) {return next(err);}
-            res.send(user);
+            res.send(user.safe());
         });
     });
 };
@@ -46,6 +46,6 @@ exports.updateUser = function(req, res) {
 
     req.user.save(function(err) {
         if(err) {res.status(400); return res.send({reason: err.toString()});}
-        res.send(req.user);
+        res.send(req.user.safe());
     });
 };
